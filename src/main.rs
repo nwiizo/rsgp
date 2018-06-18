@@ -4,6 +4,10 @@ use std::env;
 
 extern crate regex;
 use regex::Regex;
+extern crate colored;
+use colored::*;
+
+
 
 fn usage() {
     println!("rsgrep <PATTERN> <FILENAME>")
@@ -53,8 +57,7 @@ fn main() {
             }
         };
         if reg.is_match(&line) {
-            println!("##################################################");
-            println!("{}", line);
+            println!("{}", line.red());
         }
     }
 }
